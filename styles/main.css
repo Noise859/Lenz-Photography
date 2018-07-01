@@ -29,6 +29,10 @@ body {
   background-color: #1A1A1D;
   color: white;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 ol, ul {
 	list-style: none;
 }
@@ -64,6 +68,7 @@ border-radius: 5px;
   height: 100vh;
   width: 100%;
   display: block;
+  background-attachment: fixed;
 }
 
 #vertBar {
@@ -74,7 +79,7 @@ border-radius: 5px;
   top: 50%;
   left: 50%;
   transform: rotate(90deg);
-  transition: all .5s cubic-bezier(0, 0.5, 0.25, 1);
+  transition: width .5s cubic-bezier(0, 0.5, 0.25, 1), left .5s cubic-bezier(0, 0.5, 0.25, 1), transform .5s cubic-bezier(0, 0.5, 0.25, 1);
 }
 
 #name {
@@ -83,7 +88,7 @@ border-radius: 5px;
   color: white;
   width: 100%;
   opacity: 0;
-  transition: all .5s ease;
+  transition: opacity .5s ease;
 }
 
 #name p {
@@ -100,7 +105,9 @@ nav {
   position: fixed;
   top: 20px;
   left: 20px;
+  z-index: 999;
   cursor: pointer;
+  transition: left .5s ease;
 }
 
 nav div {
@@ -109,4 +116,72 @@ nav div {
   background-color: white;
   display: block;
   margin: 6px 0;
+  transition: transform .5s ease, background-color .5s ease, top .5s ease;
+  z-index: 999;
+  position: relative;
+  transform-origin: 0 50%;
+}
+
+nav section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 400px;
+  z-index: 998;
+  transition: margin .5s ease;
+  margin-left: -400px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.5);
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 997;
+}
+
+nav ul li a {
+  color: #1A1A1D;
+  font-size: 22px;
+  width: 100%;
+  padding: 13px 0;
+  display: block;
+  position: relative;
+  text-transform: uppercase;
+}
+
+nav ul {
+  width: 65%;
+  display: block;
+  position: relative;
+  margin: 40px;
+  margin-top: 70px;
+}
+
+nav ul li {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #1A1A1D;
+  margin-bottom: 20px;
+}
+
+nav ul li:after{
+  width: 0;
+  display: block;
+  background-color: #1A1A1D;
+  height: 2px;
+  position: relative;
+  content: "";
+  transition: width .5s ease;
+}
+
+nav ul li:hover:after{
+  width: 100%;
 }

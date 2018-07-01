@@ -10,3 +10,31 @@ function barGrow(){
     document.getElementById("name").style.opacity = "1";
   }, 2000);
 }
+
+function toggleNav(){
+  if(!navTog){
+    document.getElementById("slideOut").style.marginLeft = "0";
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("nav").style.left = "355px";
+    document.getElementById("bar1").style.backgroundColor = "black";
+    document.getElementById("bar1").style.transform = "rotate(45deg)";
+    document.getElementById("bar1").style.top = "-8px";
+    document.getElementById("bar2").style.display = "none";
+    document.getElementById("bar3").style.backgroundColor = "black";
+    document.getElementById("bar3").style.transform = "rotate(-45deg)";
+    document.getElementById("bar3").style.top = "8px";
+  }
+  else {
+    document.getElementById("slideOut").style.marginLeft = "-400px";
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("bar1").style.backgroundColor = "white";
+    document.getElementById("bar1").style.transform = "rotate(0deg)";
+    document.getElementById("bar1").style.top = "0";
+    document.getElementById("bar2").style.display = "block";
+    document.getElementById("bar3").style.backgroundColor = "white";
+    document.getElementById("bar3").style.transform = "rotate(0deg)";
+    document.getElementById("bar3").style.top = "0";
+    document.getElementById("nav").style.left = "20px";
+  }
+  navTog = !navTog;
+}
