@@ -185,3 +185,38 @@ nav ul li:after{
 nav ul li:hover:after{
   width: 100%;
 }
+
+#offer h1 {
+  width: 100%;
+  padding: 45px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 35px;
+  color: #1A1A1D;
+  background-color: white;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  #name p {
+    font-size: 40px;
+  }
+  #name {
+    top: 33.5vh;
+  }
+  nav section {
+    width: 100%;
+  }
+  #offer h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  nav ul {
+    margin-left: 45%;
+    width: 45%;
+  }
+  nav section {
+    left: -40%;
+  }
+}

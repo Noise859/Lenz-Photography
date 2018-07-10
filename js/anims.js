@@ -1,7 +1,13 @@
 function barGrow(){
   setTimeout(function(){
-    document.getElementById("vertBar").style.left = "calc(50% - 200px)";
-    document.getElementById("vertBar").style.width = "400px";
+    if(body.offsetWidth > 450) {
+      document.getElementById("vertBar").style.left = "calc(50% - 200px)";
+      document.getElementById("vertBar").style.width = "400px";
+    }
+    else {
+      document.getElementById("vertBar").style.left = "calc(50% - 150px)";
+      document.getElementById("vertBar").style.width = "300px";
+    }
   }, 1000);
   setTimeout(function(){
     document.getElementById("vertBar").style.transform = "rotate(0deg)";
@@ -15,7 +21,12 @@ function toggleNav(){
   if(!navTog){
     document.getElementById("slideOut").style.marginLeft = "0";
     document.getElementById("overlay").style.display = "block";
-    document.getElementById("nav").style.left = "355px";
+    if(body.offsetWidth > 450){
+      document.getElementById("nav").style.left = "355px";
+    }
+    else {
+      document.getElementById("nav").style.left = "335px";
+    }
     document.getElementById("bar1").style.backgroundColor = "black";
     document.getElementById("bar1").style.transform = "rotate(45deg)";
     document.getElementById("bar1").style.top = "-8px";
